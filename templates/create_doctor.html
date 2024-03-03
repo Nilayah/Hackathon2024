@@ -2,7 +2,7 @@
 <html>
     <head>
         <style>
-            body {background-color: rgb(255, 207, 254);}
+            body {background-color: pink;}
             .main:before{background-color: rgb(252, 172, 249);}
             .submit {
                 background-color: rgb(251, 138, 157);
@@ -17,34 +17,63 @@
                 background-color: rgb(255, 181, 193);
                 color: black;
             }
+            last {
+                padding-left: 15px;
+            } 
+            .container {
+                left: 0;
+                right: 0;
+            }
+
+            .center {
+                margin: auto;
+                width: 675px;
+                left: 100px;
+            }
+
+            .main {
+                position:relative;
+                width: 750px;
+                min-height: 600px;
+                margin: auto;
+                padding-top:15px;
+            }
+
+            .main:before {
+                content:'';
+                position: absolute;
+                width: 750px;
+                height: 600px;
+                margin: auto;
+                z-index: -1;
+                border: 5px solid rgb(219, 38, 189);
+                border-radius: 20px;
+                left:0px;
+            }
         </style>
     </head>
     <body>
-        <div class="container">
-            <div class="main">
-                <h1 style="text-align :center; font-family :'Courier New', Courier, monospace">
-                    Create Doctor Profile
-                </h1>
-                <form method="POST" action="/doctor/{{username}}">
+        <form method="POST" action="/doctor/{{username}}">
+            <div class="container">
+                <div class="main">
+                  <h1 style="text-align :center; font-family :'Courier New', Courier, monospace">Create Doctor Profile</h1>
                     <!-- Name + pic -->
                     <div class="center">
                         <label for="firstname" style="font-family :'Courier New', Courier, monospace">First name:</label>
                         <input type="text" id="firstname" name="firstname">
-                        <pic>
-                            <label for="pic" style="font-family :'Courier New', Courier, monospace">Profile picture:</label>
-                            <input type="file" id="pic" name="pic"><br><br>
-                        </pic>
-        
-                        <label for="lastname" style="font-family :'Courier New', Courier, monospace">Last name:</label>
-                        <input type="text" id="lastname" name="lastname"><br><br>
+                        <last>
+                            <label for="lastname" style="font-family :'Courier New', Courier, monospace">Last name:</label>
+                            <input type="text" id="lastname" name="lastname"><br><br>
+                        </last>
+                        <label for="pic" style="font-family :'Courier New', Courier, monospace">Profile picture:</label>
+                        <input type="file" id="pic" name="pic"><br><br>
 
                         <!-- Gender dropdown -->
-                        <label for="gender" style="font-family :'Courier New', Courier, monospace">Gender:</label>
+                        <label for="gender" style="font-family :'Courier New', Courier, monospace">Gender identity:</label>
                         <select name="gender" id="gender">
-                            <option value="Female" style="text-align :center; font-family :'Courier New', Courier, monospace">Female</option>
-                            <option value="Male" style="text-align :center; font-family :'Courier New', Courier, monospace">Male</option>
-                            <option value="Non-binary" style="text-align :center; font-family :'Courier New', Courier, monospace">Non-binary</option>
-                            <option value="Other" style="text-align :center; font-family :'Courier New', Courier, monospace">Other</option>
+                            <option value="female" style="font-family :'Courier New', Courier, monospace" selected>female</option>
+                            <option value="male" style="font-family :'Courier New', Courier, monospace">male</option>
+                            <option value="other" style="font-family :'Courier New', Courier, monospace">other</option>
                         </select><br><br>
 
                         <!-- Age -->
@@ -76,9 +105,10 @@
                         <!-- Submit -->
                         <button class="button submit" style="font-family :'Courier New', Courier, monospace" value="{{username}}">Submit</button>
                     </div>
-                </form>
-            </div>
-        </div>
-        <link rel="stylesheet" href="create_doctor.css">
+                </div>
+            
+              </div>
+        
+        </form>
     </body>
 </html>

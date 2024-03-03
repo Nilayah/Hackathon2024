@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: pink;
+        }
+       P {
+        margin-left: 400px;
+       }
+
+       name {
+        font-size: 30px;
+       }
+
+       q {
+        margin-left: 100px;
+       }
+
+       fontsize{
+        font-size: 15px;
+       }
+
+       image {
+        margin-left: 20px;
+       }
+
+
+    </style>
+<head>
+    <body>
+        <image>
+        Image:
+        </image>
+        <p>
+        <name style="font-family: 'Courier New', Courier, monospace"><b>{{doctor_info[0]}} {{doctor_info[1]}} <b><br><br></name>
+        <fontsize>
+        {{doctor_info[7]}} <br><br> <!-- location -->
+        {{doctor_info[2]}} <br><br> <!-- Age -->
+        {{doctor_info[3]}} <br><br> <!-- Gender --> 
+        {{doctor_info[4]}} <br><br> <!-- Race -->
+        {{doctor_info[5]}} <br><br> <!-- Ethnicity -->
+        {{doctor_info[8]}} <br><br> <!-- Rating -->
+        </fontsize>
+    </p>
+        
+        
+        <form method="GET" action="/comment">
+            <button type="submit">Create Comment</button>
+            </form>
+    </body>
+<html>

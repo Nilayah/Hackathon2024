@@ -30,7 +30,12 @@ def signin_page():
 
 @app.route("/main/<username>", methods=['GET'])
 def main(username):
-    return flask.render_template("main.html", username=username)
+    conn = sqlite3.connect('data/doctors.db')
+    c = conn.cursor()
+    doctors = c.execute(f"SELECT * FROM doctor").fetchall()
+    c.close()
+    conn.close()
+    return flask.render_template("main.html", username=username, doctors=doctors)
 
 @app.route("/main/<username>", methods=['POST'])
 def main_page(username): 
@@ -84,8 +89,21 @@ def create_doctor(username):
     
     return flask.redirect(f'/main/{username}')
 
+@app.route("/viewdoctor/<doctor_name>", methods=['GET'])
+def view_doctor(doctor_name):
+    conn = sqlite3.connect('data/doctors.db')
+    c = conn.cursor()
+    doctor_info = c.execute(f"SELECT firstname, lastname, age, gender, race, ethnicity, pic, location, rate FROM doctor WHERE firstname=?", (doctor_name, )).fetchone()
+    c.close()
+    conn.close()
+    return flask.render_template("display_doctor.html", doctor_info=doctor_info)
+
+@app.route("/comment", methods=['GET'])
+def comment():
+    return flask.render_template("comments.html")
+
 @app.route("/comment/<username>/<doctor_name>", methods=['GET'])
-def comment(username, doctor_name):
+def comment_no(username, doctor_name):
     return flask.render_template("create_comment.html")
 
 @app.route("/comment/<username>/<doctor_name>", methods=['POST'])
@@ -117,4 +135,4 @@ def view_comments(doctor_name):
     
 if __name__ == '__main__':
     # Start the server
-    app.run(port=8055, host='127.0.0.1', debug=True, use_evalex=False, use_reloader=False)
+    app.run(port=8060, host='127.0.0.1', debug=True, use_evalex=False, use_reloader=False)

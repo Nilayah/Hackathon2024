@@ -2,7 +2,7 @@
 <html>
 <head>
     <style>
-        body {background-color: rgb(255, 207, 254);}
+        body {background-color: pink;}
         .main:before{background-color: rgb(252, 172, 249);}
         .submit {
             background-color: rgb(251, 138, 157);
@@ -16,6 +16,36 @@
         .submit:hover {
             background-color: rgb(255, 181, 193);
             color: black;
+        }
+        .container {
+            left: 0;
+            right: 0;
+        }
+        
+        .center {
+            margin: auto;
+            width: 400px;
+            left: 100px;
+        }
+        
+        .main {
+            position:relative;
+            width: 425px;
+            min-height: 500px;
+            margin: auto;
+            padding-top:15px;
+        }
+        
+        .main:before {
+            content:'';
+            position: absolute;
+            width: 425px;
+            height: 500px;
+            margin: auto;
+            z-index: -1;
+            border: 5px solid rgb(219, 38, 189);
+            border-radius: 20px;
+            left:0px;
         }
     </style>
 </head>
