@@ -8,6 +8,27 @@
         div {
             font-size: 20px;
         }
+
+        .button1 {
+            background-color: rgb(251, 138, 157);
+            border-radius: 12px;
+            width: 100px;
+            transition-duration: 0.4s;
+            color: black;
+            font-size: 12px;
+        }
+
+        .button1:hover {
+             background-color: rgb(255, 181, 193);
+             color: black;
+        }
+
+        .inputForm {
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+        }
+
     </style>
     <head>
         <meta charset="UTF-8" />
@@ -21,6 +42,8 @@
             <h1 style ="font-family: 'Courier New', Courier, monospace"><b>Female Physician Finder<b></h1>
             <div id="searchWrapper">
                 <input
+                    class="inputForm"
+                    style="width: 300px"
                     type="text"
                     name="searchBar"
                     id="searchBar"
@@ -29,9 +52,9 @@
             </div>
             <ul id="doctorsList"></ul>
         </div>
-        <script src="app.js" ></script>
+        <!-- <script src="app.js" ></script> -->
         <form method="GET" action="/doctor/{{username}}">
-            <button type="submit">Create Doctor</button>
+            <button style="width: 300px" class="button button1" type="submit">Create Doctor</button>
          </form>
         {% for i in range(doctors|length) %}
             <td><a href="/viewdoctor/{{doctors[i][0]}}">{{doctors[i][0]}} {{doctors[i][1]}}</a></td><br>
