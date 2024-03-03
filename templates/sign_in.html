@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {background-color: pink;}
+        .button1 {
+            background-color: rgb(251, 138, 157);
+            border-radius: 12px;
+            width: 475px;
+            transition-duration: 0.4s;
+            color: black;
+            font-size: 20px;
+
+        }
+
+        .button1:hover {
+             background-color: rgb(255, 181, 193);
+             color: black;
+        }
+
+        .inputForm {
+            border-radius: 10px;
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+        }
+
+        div {
+            border-style: double;
+            border-radius: 15px;
+            width: 500px;
+            margin-left: 450px;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 20px;
+            padding-bottom: 40px;
+            border-width: thick;
+        }
+
+        input, textarea {
+            width: 500px;
+        }
+
+        h2 {
+            font-size: 300px;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        label {
+            font-size: 30px;
+        }
+
+        h1 {
+            font-size: 50px;
+        }
+
+        input {
+            font-size: 20px;
+        }
+
+
+    </style>
+    </head>
+    <p>
+    <body> 
+        <h2>       </h2>
+        <div>
+            <form method="POST" action="/signin">
+            <h1 style="text-align :center; font-family :'Courier New', Courier, monospace"><b>Sign In<b></h1> 
+            <label style="font-family: 'Courier New', Courier, monospace" for="username"><b>Username<b></label><br><br>
+            <input style="width:475px" type="text" class="inputForm" id="username" name="username" placeholder="username"></input><br><br>
+                <label style="font-family: 'Courier New', Courier, monospace" for="password"><b>Password<b></label><br><br>
+                <input style="width:475px" type="text" class="inputForm" id="password" name="password" placeholder="password"></input><br><br>
+                <button class="button button1">Sign In</button>
+            </form>
+        </div>
+    </body>
+    </p>
+<html>
+
+

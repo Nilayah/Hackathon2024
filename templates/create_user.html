@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {background-color: rgb(255, 207, 254);}
+        .main:before{background-color: rgb(252, 172, 249);}
+        .submit {
+            background-color: rgb(251, 138, 157);
+            border-radius: 12px;
+            width: 100%;
+            transition-duration: 0.4s;
+            color: black;
+
+        }
+
+        .submit:hover {
+            background-color: rgb(255, 181, 193);
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="center">
+                <h1 style="text-align :center; font-family :'Courier New', Courier, monospace">User Profile</h1>
+                    <form method="POST" action="/user">
+                        <label for="username" style="text-align :center; font-family :'Courier New', Courier, monospace">Username:
+                            </label>
+                            <input type="text" id="username" name="username" value="{{username}}">
+                            <br><br>
+                        <label for="password" style="text-align :center; font-family :'Courier New', Courier, monospace">Password:
+                            </label>
+                        <input type="text" id="password" name="password" value="{{password}}">
+                            <br><br>
+                        <label for="age" style="text-align :center; font-family :'Courier New', Courier, monospace">Age:</label>
+                            <input type="number" id="age" name="age">
+                            <br><br>
+                        <label for="gender" style="text-align :center; font-family :'Courier New', Courier, monospace">Gender:
+                            </label>
+                        <select name="gender" id="gender">
+                            <option value="Female" style="text-align :center; font-family :'Courier New', Courier, monospace">Female</option>
+                            <option value="Male" style="text-align :center; font-family :'Courier New', Courier, monospace">Male</option>
+                            <option value="Non-binary" style="text-align :center; font-family :'Courier New', Courier, monospace">Non-binary</option>
+                            <option value="Other" style="text-align :center; font-family :'Courier New', Courier, monospace">Other</option>
+                        </select><br><br>
+                        <label for="race" style="text-align :center; font-family :'Courier New', Courier, monospace">Race:
+                            <br>
+                            <input type="checkbox" name="race" value="Asian" onclick="getChecked()" style="text-align :center; font-family :'Courier New', Courier, monospace">Asian<br>
+                            <input type="checkbox" name="race" value="American Indian or Alaska Native" onclick="getChecked()" style="text-align :center; font-family :'Courier New', Courier, monospace">American Indian or Alaska Native<br>
+                            <input type="checkbox" name="race" value="Black" onclick="getChecked()" style="text-align :center; font-family :'Courier New', Courier, monospace">Black<br>
+                            <input type="checkbox" name="race" value="Latino" onclick="getChecked()" style="text-align :center; font-family :'Courier New', Courier, monospace">Latino<br>
+                            <input type="checkbox" name="race" value="Pacific Islander or Hawaiian" onclick="getChecked()" style="text-align :center; font-family :'Courier New', Courier, monospace">Pacific Islander or Hawaiian<br>
+                            <input type="checkbox" name="race" value="Southwest Asian/North African" onclick="getChecked()" style="text-align :center; font-family :'Courier New', Courier, monospace">Southwest Asian/North African<br>
+                            <input type="checkbox" name="race" value="White or Caucasian" onclick="getChecked()" style="text-align :center; font-family :'Courier New', Courier, monospace">White or Caucasian<br>
+                        <br>
+                        <label for="ethnicity" style="text-align :center; font-family :'Courier New', Courier, monospace">Ethnicity/Ethnicities:
+                            </label>
+                        <input type="text" id="ethnicity" name="ethnicity">
+                            <br><br>
+                        
+                        <button class="button submit" style="font-family :'Courier New', Courier, monospace">Submit</button>
+                    </form>
+                    <link rel="stylesheet" href="create_user.css">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

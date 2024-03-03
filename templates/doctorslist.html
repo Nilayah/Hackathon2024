@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale =1.0">
+        <title>InnovateHer</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <script>
+        function wlcm()
+        {
+            var x = document.getElementById("nme").value;
+            document.getElementById("wlcmvalue").innerHTML = 'none';
+            document.getElementById("nme")
+        }
+    </script>
+
+    <body>
+        <div id="header">
+            <div class="container">
+                <input type="text" placeholder="Search...">
+                <button style="background:rgb(255, 255, 255); color:black;">search</button>
+                <span></span>
+                
+
+            </div>
+        </header>
+
+        <div id="main">
+            <div class="container">
+                <h1>Search Result</h1>
+
+                <div class="mainfilters">
+                    <button class="outlined curved"> Friendly </button>
+                    <button class="outlined curved"> Cute </button>
+                </div>
+                
+                <span> Doctor - Location </span>
+
+                <div class="list">
+                    <div class="listitem">
+                        <div class="listimage">
+                            <button></button>
+                            <img src="/Users/sunnypark/Downloads/istockphoto-1373258973-612x612.jpg" alt="">
+                        </div>
+
+                        <div class="contentlist">
+                            <div class="titlelisting">
+                                
+                            </div>
+
+                            <div class="separator"></div>
+                            <div class="description">
+                                <span class="greytext">
+                                    Doctor - Purdue University
+                                </span>
+                            </div>
+
+                            <div class="detailslist">
+                                <div class="rate">
+                                    <img src="/icons/star.svg" alt="Star">
+                                    <span>5 <span>(14)</span></span>
+                                </div>
+
+                                <div class="price">
+                                    $150 <span> / hour</span>
+                                </div>
+                                <div class="totalprice">
+                                    <span>$450 total</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

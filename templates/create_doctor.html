@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {background-color: rgb(255, 207, 254);}
+            .main:before{background-color: rgb(252, 172, 249);}
+            .submit {
+                background-color: rgb(251, 138, 157);
+                border-radius: 12px;
+                width: 100%;
+                transition-duration: 0.4s;
+                color: black;
+
+            }
+
+            .submit:hover {
+                background-color: rgb(255, 181, 193);
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="main">
+                <h1 style="text-align :center; font-family :'Courier New', Courier, monospace">
+                    Create Doctor Profile
+                </h1>
+                <form method="POST" action="/doctor/{{username}}">
+                    <!-- Name + pic -->
+                    <div class="center">
+                        <label for="firstname" style="font-family :'Courier New', Courier, monospace">First name:</label>
+                        <input type="text" id="firstname" name="firstname">
+                        <pic>
+                            <label for="pic" style="font-family :'Courier New', Courier, monospace">Profile picture:</label>
+                            <input type="file" id="pic" name="pic"><br><br>
+                        </pic>
+        
+                        <label for="lastname" style="font-family :'Courier New', Courier, monospace">Last name:</label>
+                        <input type="text" id="lastname" name="lastname"><br><br>
+
+                        <!-- Gender dropdown -->
+                        <label for="gender" style="font-family :'Courier New', Courier, monospace">Gender:</label>
+                        <select name="gender" id="gender">
+                            <option value="Female" style="text-align :center; font-family :'Courier New', Courier, monospace">Female</option>
+                            <option value="Male" style="text-align :center; font-family :'Courier New', Courier, monospace">Male</option>
+                            <option value="Non-binary" style="text-align :center; font-family :'Courier New', Courier, monospace">Non-binary</option>
+                            <option value="Other" style="text-align :center; font-family :'Courier New', Courier, monospace">Other</option>
+                        </select><br><br>
+
+                        <!-- Age -->
+                        <label for="age" style="font-family :'Courier New', Courier, monospace">Age:</label>
+                        <input type="number" id="age" name="age"><br><br>
+
+                        <!-- Location -->
+                        <label for="location" style="font-family :'Courier New', Courier, monospace">Location:</label>
+                        <input type="text" id="location" name="location"><br><br>
+
+                        <!-- Race Checkbox -->
+                        <label for="race" style="font-family :'Courier New', Courier, monospace">Race:
+                            <br>
+                            <input type="checkbox" name="race" value="Asian" onclick="getChecked()" style="font-family :'Courier New', Courier, monospace">Asian<br>
+                            <input type="checkbox" name="race" value="American Indian or Alaska Native" onclick="getChecked()" style="font-family :'Courier New', Courier, monospace">American Indian or Alaska Native<br>
+                            <input type="checkbox" name="race" value="Black" onclick="getChecked()" style="font-family :'Courier New', Courier, monospace">Black<br>
+                            <input type="checkbox" name="race" value="Latino" onclick="getChecked()" style="font-family :'Courier New', Courier, monospace">Latino<br>
+                            <input type="checkbox" name="race" value="Pacific Islander or Hawaiian" onclick="getChecked()" style="font-family :'Courier New', Courier, monospace">Pacific Islander or Hawaiian<br>
+                            <input type="checkbox" name="race" value="Southwest Asian/North African" onclick="getChecked()" style="font-family :'Courier New', Courier, monospace">Southwest Asian/North African<br>
+                            <input type="checkbox" name="race" value="White or Caucasian" onclick="getChecked()" style="font-family :'Courier New', Courier, monospace">White or Caucasian<br>
+                        <br>
+                        <label for="ethnicity" style="font-family :'Courier New', Courier, monospace">Ethnicity/Ethnicities:
+                            </label>
+                        <input type="text" id="ethnicity" name="ethnicity">
+                            <br><br>
+                        <label for="rate" style="font-family :'Courier New', Courier, monospace">Rate:</label>
+                        <input type="number" id="rate" name="rate"><br><br>
+
+                        <!-- Submit -->
+                        <button class="button submit" style="font-family :'Courier New', Courier, monospace" value="{{username}}">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <link rel="stylesheet" href="create_doctor.css">
+    </body>
+</html>
